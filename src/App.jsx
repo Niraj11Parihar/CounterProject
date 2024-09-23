@@ -4,8 +4,8 @@ function App() {
   let countValue = JSON.parse(localStorage.getItem('count')) || 0;
   
   let [counter, setCounter] = useState(countValue);
-  let [show, setShow] = useState(true); // default to true so the counter is shown initially
-  let [h1BgChanged, setH1BgChanged] = useState(false); // state to track background change
+  let [show, setShow] = useState(true); 
+  let [h1BgChanged, setH1BgChanged] = useState(false); 
 
   function showbtn() {
     setShow(true);
@@ -16,7 +16,7 @@ function App() {
   }
 
   function togglebtn() {
-    setShow(prevShow => !prevShow); // Toggles the value of 'show'
+    setShow(prevShow => !prevShow); 
   }
   
   function Addcounts() { 
@@ -32,7 +32,7 @@ function App() {
   }
 
   function toggleH1Bg() {
-    setH1BgChanged(prevState => !prevState); // Toggle the background state
+    setH1BgChanged(prevState => !prevState);
   }
 
   useEffect(() => {
@@ -43,13 +43,13 @@ function App() {
     <>
       <div className="flex h-screen items-center justify-center bg-gradient-to-r from-blue-400 via-orange-700 border-t-violet-700">
         <div>
-          {show && ( // This conditionally renders the counter
+          {show && ( 
             <div className="counter text-center p-8 rounded-lg shadow-lg bg-white/30 backdrop-blur-md">
               <h1
                 className={`w-96 rounded-xl text-white font-bold p-6 text-center shadow-lg ${
                   h1BgChanged ? 'bg-gradient-to-r from-red-600 to-red-400' : 'bg-gradient-to-r from-green-600 to-green-400'
                 }`}
-                onClick={toggleH1Bg} // Change background on click
+                onClick={toggleH1Bg} 
               >
                 Counter {counter}
               </h1>
