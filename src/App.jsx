@@ -24,7 +24,11 @@ function App() {
   }
 
   function removeCounts() { 
-    setCounter(counter - 1);
+    if(counter <= 0){
+      return false;
+    }else{
+      setCounter(counter - 1)
+    }
   }
 
   function toggleH1Bg() {
